@@ -133,7 +133,7 @@ This Part 3 repository continues the work submitted in the [Part 2 formative rep
 - **Commit messages:** Commit messages name the page, file or feature changed (for example, `Add readable comments to all HTML pages`) rather than vague messages such as `updated files`. See the commit history table below.
 - **Changelog and README:** Development work is recorded with dates at repository root in [`CHANGELOG.md`](CHANGELOG.md), with a linked summary in this README.
 - **References:** The Harvard-style reference list cites the youth unemployment source, development libraries, map providers, deployment documentation and AI assistance used. The image source table records where each image was taken from.
-- **Accessibility and SEO:** Descriptive image alternative text, semantic heading structure, skip navigation, unique page titles and descriptions, canonical links, keywords, `robots.txt` and `sitemap.xml` were added across the five HTML pages.
+- **Accessibility and SEO:** Descriptive image alternative text, semantic heading structure, skip navigation, unique page titles and descriptions, canonical links, keywords, `robots.txt` and `sitemap.xml` were added across the six HTML pages.
 - **Deployment:** Placeholder deployment instructions were removed from production pages and replaced with the live GitHub Pages URL and repository documentation.
 
 ## Technologies

@@ -1,149 +1,114 @@
-# Changelog
+# Part 3 Changelog: Response to Part 2 Feedback
 
-All notable changes to the BASIC Community Future Labs website (WEDE5020 Part 3) are documented here, newest first. Dates use the format YYYY-MM-DD.
+**Part 2 mark: 87/100.** This changelog records how the current BASIC Community Future Labs website addresses the lecturer's feedback. Commit links and dates for the cited examples are taken from the repository history; earlier project milestones retain their documented dates. The website has six pages: Home, About, Programmes, News, Enquiry and Contact.
 
----
+## 1. Commit history
 
-## 2026-11-09 — Project structure and naming cleanup
+**Part 2 mark: 1/5**
 
-### Changed
-- Renamed shared scripts to `js/site.js` and `js/animations.js`, and renamed their stylesheets to `css/interactions.css` and `css/animations.css`.
-- Renamed image assets to descriptive, lowercase kebab-case filenames without spaces or redundant prefixes.
-- Updated page references, social preview URLs, the sitemap order and README project structure to match the current files.
-- Updated the News page image and alternative text to match the image content.
+**Feedback:** Commit messages should identify the files, pages or features changed instead of using vague descriptions.
 
-### Verified
-- All six pages load without browser errors or broken images.
-- All local HTML references resolve, and JavaScript syntax checks pass.
+**Action:** Part 3 history contains feature-specific messages. The examples below link to actual commits:
 
----
+| Date | Commit | Change recorded |
+|---|---|---|
+| 07 November 2026 | [`18bd19b`](https://github.com/44Xolo/my-site/commit/18bd19b) — `docs: document optimised asset workflow` | Documented how the site's media assets were optimized. |
+| 07 November 2026 | [`e12e616`](https://github.com/44Xolo/my-site/commit/e12e616) — `perf: reduce home page media payloads` | Reduced the Home page's image and animation payloads. |
+| 07 November 2026 | [`8aacca1`](https://github.com/44Xolo/my-site/commit/8aacca1) — `feat: add AJAX delivery for enquiry forms` | Added form submission behavior to `enquiry.html`, `contact.html` and the site JavaScript. |
+| 07 November 2026 | [`60c91b2`](https://github.com/44Xolo/my-site/commit/60c91b2) — `fix: restore news filters and newsletter` | Restored the News page's filtering and newsletter interactions. |
+| 07 November 2026 | [`7771112`](https://github.com/44Xolo/my-site/commit/7771112) — `fix: add news to all page navigation` | Added News to the shared site navigation. |
+| 07 November 2026 | [`1ccb234`](https://github.com/44Xolo/my-site/commit/1ccb234) — `feat: add expandable news stories` | Added expandable story content to the News page. |
+| 09 November 2026 | [`889faf6`](https://github.com/44Xolo/my-site/commit/889faf6) — `Organize site assets and document image references` | Renamed assets and updated their references and documentation. |
 
-## 2026-11-07 — Rubric compliance: forms, SEO and images
+Some older commits use a feature-focused message without naming a file, and the original `init` and `Update site` messages remain in the history. Existing commits have not been rewritten. New commits use the more specific `type(file): what changed` format where practical.
 
-### Added
-- **`enquiry.html`**
-  - Required programme dropdown with validation.
-  - Volunteer availability checkboxes (at least one must be selected).
-  - Experience level radio button group.
-  - Required consent checkbox.
-- **`contact.html`**
-  - Required consent checkbox.
-  - Optional newsletter subscription checkbox.
-- **`js/part3.js`**
-  - New `checked` validation rule for checkbox and consent fields.
-  - Select validation that runs on `change`.
-  - Contact form submission through `FORM_ENDPOINT` (Formspree), with a clear on-page success message.
-  - Automatic `mailto:` fallback if the Formspree request fails.
-- **`css/part3.css`**: styles for checkbox, radio and fieldset controls, including focus and error states.
-- **SEO files**
-  - `robots.txt` and `sitemap.xml` using the live GitHub Pages URLs.
-  - Site map section in `README.md` with `images/sitemap.png`.
+## 2. Dated changelog for the current site
 
-### Changed
-- **`enquiry.html`**: the volunteer response now lists the selected experience level and availability.
-- **`contact.html`**: submit button renamed to "Send message".
-- **`js/part3.js`**: programme intake dates now roll forward automatically.
-- **SEO metadata**: page-specific meta keywords on `programmes.html`, `enquiry.html` and `contact.html`.
-- **Images**
-  - Files renamed with descriptive, hyphenated names (for example `TOGETHER.jpg` → `community-members-together.jpg`).
-  - All references in HTML, CSS and JS updated to the new names.
-  - Alt text rewritten to describe what each image actually shows.
+**Part 2 mark: 1.5/5**
 
-### Fixed
-- Programme intake dates were hard-coded to 2026 dates that had already passed; they now roll forward so the listed intakes are always upcoming.
+**Feedback:** The root-level site needed a dated changelog that described what changed and why.
 
----
+**Action:** This file is the root-level changelog. Entries name the relevant pages, files and purpose of the work.
 
-## 2026-11-05 — Feedback repository continuity
+### 05 November 2026 — Part 2 feedback carried into Part 3
 
-### Added
-- Link between this Part 3 repository and the original Part 2 repository: https://github.com/EMKNDW/wede5020-g2-2026-formative-2-part-2-44xolo
+- Replaced table-based page layout with CSS Grid and Flexbox rules in `css/style.css`.
+- Improved visible hover, focus, active and disabled states for navigation, buttons and form controls.
+- Added descriptive page metadata, skip navigation and responsive layout documentation.
+- Recorded the corrections in the README and changelog so the response to earlier feedback is traceable.
 
-### Documentation
-- Reviewed the Part 2 feedback and recorded every completed correction in `README.md` and this changelog.
-- Corrections recorded cover: layout tables, commit and changelog documentation, interactive-state styling, metadata, image names and alt text, semantic accessibility, references and deployment placeholders.
+### 05–07 November 2026 — Part 3 features and refinements
 
----
+- Added programme search, category filtering and sorting in `programmes.html` and the shared site JavaScript.
+- Added validated volunteer, sponsor, partnership and contact form interactions in `enquiry.html` and `contact.html`.
+- Added interactive maps to `contact.html`, plus a keyboard-accessible image lightbox to `index.html`.
+- Added the News page, category filters, newsletter form and expandable story content.
+- Added page-specific metadata, social-sharing previews and the `robots.txt` and `sitemap.xml` files.
+- Relevant changes are recorded in the linked commit history in section 1.
 
-## 2026-11-05 — SEO and form completion
+### 09 November 2026 — File naming and project documentation
 
-### Added
-- Page metadata, Open Graph and Twitter sharing details on all five pages.
-- Accessible enquiry and contact result announcements in `enquiry.html`, `contact.html` and `js/part3.js`, so screen readers announce form outcomes.
-- Contact `mailto:` workflow connected to `info@basicfuturelabs.org`, with encoded subject and body values.
+- Renamed scripts, stylesheets and image files to descriptive, lowercase kebab-case names.
+- Updated HTML, CSS and JavaScript references to match the renamed files.
+- Updated the README project structure and sitemap ordering; revised image credits and the home page's explanatory comments.
+- Checked all six pages in the integrated browser, confirmed there were no broken images or console errors, and verified JavaScript syntax and local asset references.
 
-### Verified
-- `robots.txt`, `sitemap.xml` and canonical GitHub Pages URLs cover every page.
-- JavaScript form validation, enquiry calculations, required fields, phone and email formats, and live form feedback all behave as expected.
+## 3. References and attribution
 
----
+**Part 2 mark: 2.5/5**
 
-## 2026-11-05 — Image ownership documentation
+**Feedback:** Cite the youth-unemployment statistic, images and external resources, and identify any AI assistance.
 
-### Added
-- Ownership and licence register in `README.md` covering every local image, logo, favicon and animation.
+**Action:** The README contains the reference list and AI-use declaration. The sources currently documented are summarized below.
 
-### Changed
-- BASIC/student-created assets are recorded as owned by Hlompho Muzi Xolo / BASIC Community Future Labs for academic use.
+### Youth-unemployment statistic
 
-### Removed
-- Unresolved image-source placeholders.
+The Home page attributes its 60.9% youth-unemployment figure to Statistics South Africa:
 
-### Notes
-- Duplicate legacy filenames are retained only for compatibility.
+Statistics South Africa (2026) *Labour market trends and youth unemployment statistics*. Available at: https://www.statssa.gov.za/?p=18215 (Accessed: 5 November 2026).
 
----
+The figure is identified on the page with a link to the source. The reported statistic should be checked against the cited release before final submission to ensure the period and wording match the source.
 
-## 2026-11-05 — Accessible gallery lightbox
+### Images
 
-### Added
-- **`index.html`**: full-size gallery image viewing.
-- **`js/part3.js`**
-  - Backdrop click to close.
-  - Keyboard navigation between images.
-  - Focus trapping while the lightbox is open.
-  - Focus restoration to the triggering element on close.
-- **`css/part3.css`**: responsive lightbox layout and keyboard focus styles.
+The README lists the local image filenames and gives Harvard Anglia-style, 2026-dated Pinterest reference entries. The source information provided for the images was Pinterest.
 
----
+Individual Pinterest pin URLs, original creator names and licence details have not been provided. Pinterest may host an image without being its original creator. Replace each marked URL field in the README with the direct pin and, where possible, record the original creator and reuse terms before submission.
 
-## 2026-11-05 — Part 3 submission preparation
+### Other external resources
 
-### Added
-- **Programmes (`js/part3.js`)**: searchable, filterable and sortable programme data.
-- **Enquiry (`enquiry.html`, `js/part3.js`)**: enquiry calculations and validated form responses.
-- **Contact (`contact.html`, `js/part3.js`)**: `mailto:` workflow.
-- **Maps (`contact.html`, `js/maps.js`)**: Leaflet maps with markers, popups and Google Maps directions.
-- **Interactive components (`js/part3.js`)**: accordion, tabs, modal, lightbox and keyboard controls.
-- **Styling**: responsive and interaction styles in `css/part3.css` and `css/style.css`.
-- **Animation**: `js/gsap.js` and `css/gsap-animations.css`.
-- **Documentation**: references, deployment documentation, canonical links and repository documentation across the HTML pages and `README.md`.
+| Resource | Use in the site | Source |
+|---|---|---|
+| Google Fonts: Inter, Montserrat and Space Grotesk | Typography | https://fonts.googleapis.com/ |
+| GSAP 3.12.5 and ScrollTrigger | Home-page animation | https://gsap.com/docs/v3/ and https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ |
+| Leaflet 1.9.4 | Interactive maps on `contact.html` | https://leafletjs.com/ and https://unpkg.com/leaflet@1.9.4/ |
+| OpenStreetMap contributors | Map tiles and map data | https://www.openstreetmap.org/copyright |
+| Google Maps | Directions links on `contact.html` | https://www.google.com/maps/ |
 
-### Verified
-- Repository and deployment instructions checked through GitHub.
+The site's social icons are inline SVG markup rather than an externally loaded icon library.
+
+### AI assistance
+
+The README identifies Anthropic Claude and Microsoft Copilot, their use in drafting, code explanation and debugging, and the dates recorded for that assistance. No shareable links to individual AI conversations were supplied, so this changelog does not invent conversation URLs.
+
+## 4. Pseudo-classes and interaction states
+
+**Part 2 mark: 9/10**
+
+**Feedback:** Use and check interaction states consistently across interactive elements.
+
+**Action:** Shared styles in `css/style.css`, `css/interactions.css` and `css/animations.css` include hover, focus, focus-visible, active and disabled states. They cover navigation, links, buttons, form controls, cards, gallery images and lightbox controls. Keyboard focus uses a visible outline, and disabled controls have a distinct appearance.
+
+The available integrated browser was used to check page loading and key interactions, including the Home page lightbox and Programme sorting. A separate Firefox/Safari or mobile-device test matrix was not recorded, so cross-browser coverage should be completed and documented before submission.
+
+## 5. Feedback carried over from Part 1
+
+**Part 2 mark: 8/10**
+
+**Feedback:** Tables were used for layout, and changes made after feedback were not clearly documented.
+
+**Action:** Page layouts use CSS Grid and Flexbox in the shared stylesheets; the HTML pages contain no layout tables. Tables in the README are reserved for genuinely tabular information, such as marks, references and asset lists. Dated sections in this changelog and the Part 2 feedback summary in the README explain which areas changed and why.
 
 ---
 
-## 2026-11-05 — Part 2 feedback implementation
-
-### Changed
-- Removed HTML table-based layout from the whole site; CSS Grid and Flexbox are used for layout.
-- Expanded hover, active, focus-visible and disabled styling across navigation, buttons, cards and interactive controls.
-- Improved image alt text, semantic headings and descriptive image filenames.
-- Replaced placeholder deployment-domain instructions with the GitHub Pages URL.
-
-### Added
-- Skip navigation link.
-- Descriptive meta titles and descriptions on every page.
-- Documented responsive breakpoints at 1024px, 768px and 480px.
-- Dated README and changelog entries documenting the feedback corrections.
-
----
-
-## 2026-11-05 — Initial website implementation
-
-### Added
-- Five-page BASIC Community Future Labs website.
-- Consistent navigation and footer across all pages.
-- Organisation content and programme information.
-- Initial responsive CSS and JavaScript interactions.
+For project details, page descriptions and the full reference list, see [`README.md`](README.md). Historical changes are linked to their original commits above; future commits should identify their change using a message such as `docs(CHANGELOG.md): record response to Part 2 feedback`.
