@@ -232,17 +232,17 @@ All locally hosted image files are stored in `images/` and use descriptive filen
 |---|---|
 | `community-lab-hero.png` | Xolo, H.M. (2026) *Community lab hero* [Digital composite, created in Canva using a Pinterest photograph]. Original photograph available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
 | `community-workshop.jpg` | *Community workshop* (2026) [Photograph]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
-| `coding-workspace.jpg` | *Coding workspace* (2026) [Photograph]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
-| `learning-workspace.jpg` | *Learning workspace* (2026) [Photograph]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
-| `computer-workspace.jpg` | *Computer workspace* (2026) [Photograph]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
-| `community-team-outdoors.jpg` | *Community team outdoors* (2026) [Photograph]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
-| `community-event.jpg` | *Community event* (2026) [Photograph]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
-| `community-gala.jpg` | *Community gala* (2026) [Photograph]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
-| `future-city-illustration.jpg` | *Future city illustration* (2026) [Illustration]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
-| `workshop-machinery.jpg` | *Workshop machinery* (2026) [Photograph]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
-| `solar-panel-installation.jpg` | *Solar panel installation* (2026) [Photograph]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
-| `sustainable-city-illustration.jpg` | *Sustainable city illustration* (2026) [Illustration]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
-| `glass-office-city-view.jpg` | *Glass office city view* (2026) [Photograph]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
+| `coding-workspace.jpg` | *Coding workspace* (2026) [Photograph]. Pinterest. Available at: [https://i.pinimg.com/736x/89/08/f0/8908f0757e4fa971caaed7bec1c84913.jpg] (Accessed: 9 November 2026). |
+| `learning-workspace.jpg` | *Learning workspace* (2026) [Photograph]. Pinterest. Available at: [https://i.pinimg.com/736x/f4/d6/79/f4d67926415098db008d82ab460840c5.jpg] (Accessed: 9 November 2026). |
+| `computer-workspace.jpg` | *Computer workspace* (2026) [Photograph]. Pinterest. Available at: [https://i.pinimg.com/736x/ff/cf/63/ffcf631cef9c7507ce584f3650b09550.jpg] (Accessed: 9 November 2026). |
+| `community-team-outdoors.jpg` | *Community team outdoors* (2026) [Photograph]. Pinterest. Available at: [https://i.pinimg.com/1200x/11/2d/03/112d03facd2c43d2e23e464fce37baad.jpg] (Accessed: 9 November 2026). |
+| `community-event.jpg` | *Community event* (2026) [Photograph]. Pinterest. Available at: [https://i.pinimg.com/736x/db/ec/2b/dbec2b036c1d304eae220919405ee9f9.jpg] (Accessed: 9 November 2026). |
+| `community-gala.jpg` | *Community gala* (2026) [Photograph]. Pinterest. Available at: [https://i.pinimg.com/736x/4a/d8/c1/4ad8c16d4a38ac44a5c754594bf9be1b.jpg] (Accessed: 9 November 2026). |
+| `future-city-illustration.jpg` | *Future city illustration* (2026) [Illustration]. Pinterest. Available at: [https://i.pinimg.com/736x/25/75/2d/25752d74d9d8a4eeb7719232bc78fb95.jpg] (Accessed: 9 November 2026). |
+| `workshop-machinery.jpg` | *Workshop machinery* (2026) [Photograph]. Pinterest. Available at: [https://i.pinimg.com/736x/b3/48/a7/b348a78139378d0466f5c336014046c8.jpg] (Accessed: 9 November 2026). |
+| `solar-panel-installation.jpg` | *Solar panel installation* (2026) [Photograph]. Pinterest. Available at: [https://i.pinimg.com/736x/ed/64/cf/ed64cf35a9dfa96de4fab793419e0196.jpg] (Accessed: 9 November 2026). |
+| `sustainable-city-illustration.jpg` | *Sustainable city illustration* (2026) [Illustration]. Pinterest. Available at: [https://i.pinimg.com/736x/04/e3/c2/04e3c27ca15b94fb07449f19080cdd20.jpg] (Accessed: 9 November 2026). |
+| `glass-office-city-view.jpg` | *Glass office city view* (2026) [Photograph]. Pinterest. Available at: [https://i.pinimg.com/736x/79/39/79/79397956de598a91b165001637fd0f7a.jpg] (Accessed: 9 November 2026). |
 
 ## AI use declaration
 
@@ -285,3 +285,24 @@ OpenStreetMap contributors (n.d.) *Copyright and licence*. Available at: https:/
 Statistics South Africa (2026) *Labour market trends and youth unemployment statistics*. Available at: https://www.statssa.gov.za/?p=18215 (Accessed: 5 November 2026).
 
 World Wide Web Consortium (W3C) (2023) *Web Content Accessibility Guidelines (WCAG) 2.2*. Available at: https://www.w3.org/TR/WCAG22/ (Accessed: 5 November 2026).
+
+
+BASIC (2026) BASIC Community Future Lab. Available at: https://www.basiccommunity.org/ (Accessed: 02 October 2026).
+
+Google Fonts (2026) Google Fonts. Available at: https://fonts.google.com/ (Accessed: 02 October 2026).
+
+MDN Web Docs (2026) CSS Grid Layout. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout (Accessed: 02 October 2026).
+
+MDN Web Docs (2026) Flexible Box Layout. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout (Accessed: 02 October 2026).
+
+MDN Web Docs (2026) HTML: HyperText Markup Language. Available at: https://developer.mozilla.org/en-US/docs/Web/HTML (Accessed: 02 October 2026).
+
+W3Schools (2026) HTML Tutorial. Available at: https://www.w3schools.com/html/ (Accessed: 02 October 2026).
+
+W3Schools (2026) CSS Tutorial. Available at: https://www.w3schools.com/css/ (Accessed: 02 October 2026).
+
+W3Schools (2026) JavaScript Tutorial. Available at: https://www.w3schools.com/js/ (Accessed: 02 October 2026).
+
+World Wide Web Consortium (W3C) (2026) HTML5 Specification. Available at: https://www.w3.org/TR/html5/ (Accessed: 02 October 2026).
+
+World Wide Web Consortium (W3C) (2026) CSS Snapshot. Available at: https://www.w3.org/TR/CSS/ (Accessed: 02 October 2026). 
