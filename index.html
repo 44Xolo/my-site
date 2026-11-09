@@ -1,88 +1,40 @@
 <!DOCTYPE html>
-<!-- 
-  This first line tells the browser "hey, this is a modern HTML5 page".
-  Without it, some browsers go into a weird old mode and display things differently.
--->
 <html lang="en">
-<!-- lang="en" says the page is written in English. Screen readers use this to pick the right voice. -->
 
 <head>
-<!-- The HEAD is like the backstage of a theatre. Visitors never see it directly,
-     but it holds all the info the browser and Google need to run the show. -->
-
 <meta charset="UTF-8">
-<!-- UTF-8 means the page can show any letter or symbol (like &, é or quote marks) without turning into garbage. -->
-
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<!-- This one makes the site fit a phone screen properly. Without it, phones show a tiny zoomed-out desktop page. -->
-
 <title>BASIC | Building Access, Skills, Innovation &amp; Community</title>
-<!-- The title is the text on the browser tab and the big blue link in Google results.
-     &amp; is just how you write an "&" safely inside HTML. -->
-
 <meta name="description" content="BASIC Community Future Labs offers seven practical programmes in Johannesburg and Durban, helping young South Africans build digital, technical and business skills.">
-<!-- The little summary Google shows under the title in search results. -->
-
 <meta name="keywords" content="BASIC, community labs, future labs, youth unemployment, coding, AI literacy, solar training, entrepreneurship, South Africa, Johannesburg, Durban">
-<!-- Keywords for the topic. Google mostly ignores these now, but I kept them to show what the site is about. -->
-
 <meta name="author" content="Hlompho Muzi Xolo">
-<!-- Who made the site. -->
-
 <meta name="robots" content="index,follow">
-<!-- Tells search engines "yes, you can list this page and follow its links". -->
-
 <meta name="theme-color" content="#000000">
-<!-- On some phones, this colours the browser's top bar black so it matches the site. -->
-
 <link rel="canonical" href="https://44xolo.github.io/BASIC/">
 
-<!-- Open Graph / Twitter -->
-<!-- These tags control how the link looks when someone shares it on WhatsApp, Facebook, X and so on.
-     Think of it as the preview card that pops up under the link. -->
+<!-- Social-sharing metadata controls the preview shown when this page is shared. -->
 <meta property="og:title" content="BASIC | Building Access, Skills, Innovation &amp; Community">
 <meta property="og:description" content="BASIC Community Future Labs offers seven practical programmes in Johannesburg and Durban, helping young South Africans build digital, technical and business skills.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="BASIC">
 <meta property="og:locale" content="en_ZA">
-<!-- en_ZA = English as spoken in South Africa. -->
-<meta property="og:image" content="https://44xolo.github.io/BASIC/images/basic-community-lab.jpg">
+<meta property="og:image" content="https://44xolo.github.io/BASIC/images/community-lab-hero.png">
 <meta property="og:image:alt" content="BASIC learners collaborating in a community future lab">
-<!-- The picture shown in the share card, plus a text description for people who can't see it. -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="BASIC | Building Access, Skills, Innovation &amp; Community">
 <meta name="twitter:description" content="7 hands-on programmes tackling youth unemployment in Johannesburg and Durban.">
 
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-<!-- The tiny icon on the browser tab. -->
-
-<!-- Fonts: preconnect to both hosts, display=swap avoids invisible text while loading -->
-<!-- Quick explanation: the fonts live on Google's computers, not mine.
-     "preconnect" is like phoning ahead so the connection is ready by the time we ask for the font.
-     "display=swap" means the browser shows normal text first and swaps in the fancy font when it arrives,
-     so nobody stares at a blank space. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
-<!-- Inter is for normal reading text. Montserrat is the chunky one for big headings.
-     The numbers (400, 600, 800...) are how bold each version is. -->
 
-<!-- My own CSS files (CSS is the code that makes things look good: colours, spacing, layout).
-     They load in order, so later files can override earlier ones. -->
 <link rel="stylesheet" href="css/style.css">
-<!-- style.css = the main look of the whole site -->
-<link rel="stylesheet" href="css/part3.css">
-<!-- part3.css = extra styles for part 3 of the assignment (lightbox, modal, etc.) -->
-<link rel="stylesheet" href="css/gsap-animations.css">
-<!-- gsap-animations.css = styles that go with the scroll animations -->
+<link rel="stylesheet" href="css/interactions.css">
+<link rel="stylesheet" href="css/animations.css">
 
-<link rel="preload" as="image" href="images/basic-community-lab.jpg">
-<!-- Tells the browser "you're going to need this big hero picture really soon, start downloading it now".
-     That makes the top of the page appear faster. -->
-
-<!-- Structured data for search engines -->
-<!-- This block isn't for people. It's a neat little info card written for Google's robots,
-     so they know exactly what BASIC is (an NGO), who started it and where it works. -->
+<link rel="preload" as="image" href="images/community-lab-hero.png">
+<!-- Structured data describes BASIC and its service areas to search engines. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -98,34 +50,16 @@
 </head>
 
 <body>
-<!-- The BODY is everything people actually see on the page. -->
-
 <div id="splash" aria-hidden="true">BASIC.</div>
-<!-- The opening "BASIC." screen that shows for a moment when the site loads.
-     aria-hidden="true" hides it from screen readers because it's just decoration. -->
-
 <a class="skip" href="#main">Skip to main content</a>
-<!-- Invisible until someone presses Tab on their keyboard. Then it lets them jump straight past the menu
-     to the main content. Really helpful for people who don't use a mouse. -->
-
 <div class="g-progress" aria-hidden="true"><span></span></div>
-<!-- The thin progress bar at the top that fills up as you scroll down. The JavaScript moves the span inside it. -->
 
 <header>
-  <!-- The header is the top strip of the site: logo on one side, menu on the other. -->
   <div class="wrap bar">
-    <!-- "wrap" keeps the content from stretching too wide on big screens. "bar" lines the items up in a row. -->
     <a class="logo" href="index.html" aria-label="BASIC home">BASIC.</a>
-    <!-- The logo is also a link back to the home page. aria-label tells screen readers what it does. -->
-
     <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">&#9776;</button>
-    <!-- The hamburger button (the three little lines, &#9776;) that opens the menu on phones.
-         aria-expanded flips between false and true when the menu opens, so screen readers know what state it's in. -->
-
     <nav id="nav" aria-label="Main">
-      <!-- The main menu. "nav" is the proper tag for a group of navigation links. -->
       <a href="index.html" class="active" aria-current="page">Home</a>
-      <!-- "active" highlights the page you're on. aria-current says the same thing to screen readers. -->
       <a href="about.html">About</a>
       <a href="programmes.html">Programmes</a>
       <a href="news.html">News</a>
@@ -136,72 +70,45 @@
 </header>
 
 <main id="main" class="wrap" tabindex="-1">
-<!-- MAIN holds the page's one big important area. The id matches the "skip to main content" link above.
-     tabindex="-1" lets that link move the keyboard focus here even though it isn't a button or link. -->
-
   <section class="hero reveal" aria-labelledby="hero-title">
-    <!-- HERO = the big first thing you see. "reveal" is a class the JavaScript uses to fade this in as you scroll.
-         aria-labelledby connects the section to its heading so screen readers can announce it. -->
     <div>
-      <!-- A small label saying this site is my WEDE5020 assignment. -->
       <h1 id="hero-title">Building access, skills, innovation &amp; community.</h1>
-      <!-- H1 is the main heading. There should only be one per page, like the title of a book. -->
       <p>BASIC runs hands-on community labs in Johannesburg and Durban, tackling 60.9% youth unemployment with 7 practical programmes.</p>
       <a class="btn" href="programmes.html">Explore programmes</a>
       <a class="btn ghost" href="enquiry.html">Get involved</a>
-      <!-- Two buttons. "btn" is the solid main one, "ghost" is the see-through outline one, so the main choice stands out. -->
     </div>
 
     <div class="stats" role="list" aria-label="Key statistics">
-      <!-- Four number boxes. role="list" tells screen readers this is a list even though I used divs. -->
+      <!-- JavaScript animates these values; the initial text remains visible if scripting is unavailable. -->
       <div class="dark" role="listitem"><b data-count="60.9" data-dec="1" data-suffix="%">60.9%</b><span>Youth unemployment, Q1 2026 (<a href="https://www.statssa.gov.za/?p=18215" target="_blank" rel="noopener noreferrer">Statistics South Africa, 2026</a>)</span></div>
-      <!-- The data-count, data-dec and data-suffix bits are instructions for my JavaScript:
-           count up to 60.9, show 1 decimal place, and put a % at the end.
-           The real number is already typed inside the tag, so if JavaScript fails you still see it.
-           target="_blank" opens the link in a new tab. rel="noopener noreferrer" keeps the new tab from
-           being able to mess with this one (a safety thing). -->
       <div role="listitem"><b data-count="45.6" data-dec="1" data-suffix="%">45.6%</b><span>NEET youth</span></div>
-      <!-- NEET = young people Not in Employment, Education or Training. -->
       <div role="listitem"><b data-count="10.1" data-dec="1" data-suffix="%">10.1%</b><span>Absorption rate</span></div>
-      <!-- Absorption rate = the share of working-age people who actually have a job. -->
       <div role="listitem"><b data-count="7">7</b><span>Programmes</span></div>
     </div>
   </section>
 
   <figure class="hero-image reveal">
-    <!-- A figure is a picture with a caption that belongs to it. -->
-    <img src="images/basic-community-lab.jpg" alt="Crowd of people seen from above with the word Basic overlaid" fetchpriority="high" decoding="async">
-    <!-- alt = words describing the picture, for people who can't see it or if it fails to load.
-         fetchpriority="high" says "load this one first, it's the biggest thing on screen".
-         decoding="async" lets the browser prepare the image without freezing the rest of the page. -->
+    <img src="images/community-lab-hero.png" alt="Crowd of people seen from above with the word Basic overlaid" fetchpriority="high" decoding="async">
     <figcaption>Community-led learning in Johannesburg and Durban</figcaption>
   </figure>
 
   <div class="marquee" aria-hidden="true">
-    <!-- The strip of words that slides across the screen. It's only decoration, so screen readers skip it. -->
     <div class="track">
       <span>CODE /</span><span>AI /</span><span>GREEN /</span><span>BUILD /</span><span>ENTREPRENEUR /</span><span>EDUCATION /</span><span>CONNECT /</span>
       <span>CODE /</span><span>AI /</span><span>GREEN /</span><span>BUILD /</span><span>ENTREPRENEUR /</span><span>EDUCATION /</span><span>CONNECT /</span>
-      <!-- The words are written twice on purpose. When the first set slides out of view,
-           the second set is right behind it, so it looks like an endless loop with no gap. -->
+      <!-- The repeated labels let the marquee loop without a visible gap. -->
     </div>
   </div>
 
-  <!-- PROGRAMMES: pinned horizontal scroll on desktop, swipeable row on mobile -->
-  <!-- On a computer, the section "sticks" in place while you scroll and the cards slide sideways.
-       On a phone, you just swipe the row left and right with your finger. -->
+  <!-- Desktop animations pin this section while the programme cards move horizontally; smaller screens can scroll the row directly. -->
   <section class="g-bleed" aria-labelledby="prog-title">
-    <!-- "g-bleed" lets this section stretch edge to edge, past the normal width of the page. -->
     <div class="g-prog">
       <div class="g-prog__head">
         <h2 id="prog-title">Seven programmes. Start where you are.</h2>
         <p>Every lab runs the same way: small groups, real projects, and mentors who came through the programme themselves. <a class="g-link" href="programmes.html">See full programme details</a></p>
       </div>
       <div class="g-prog__viewport" tabindex="0" role="region" aria-label="Programmes, scrollable">
-        <!-- The window you look through at the cards. tabindex="0" means keyboard users can click into it
-             and scroll it with the arrow keys. -->
         <ol class="g-prog__track">
-          <!-- The long row of cards. It's an ordered list (ol) because the programmes sit in a set order. -->
           <li class="g-card"><h3>CODE</h3><p>Build websites and simple apps by making real tools for local clinics, shops and community groups.</p></li>
           <li class="g-card"><h3>AI</h3><p>Understand how AI tools work, where they get things wrong, and how to use them responsibly.</p></li>
           <li class="g-card"><h3>GREEN</h3><p>Hands-on solar and clean-energy training with real panels and installation practice.</p></li>
@@ -209,22 +116,16 @@
           <li class="g-card"><h3>ENTREPRENEUR</h3><p>Turn an idea into a small business: pricing, finding customers and making a first sale.</p></li>
           <li class="g-card"><h3>EDUCATION</h3><p>Learn to teach what you know and run sessions for younger learners in your area.</p></li>
           <li class="g-card"><h3>CONNECT</h3><p>Weekend sessions where graduates teach others and keep the community growing.</p></li>
-          <!-- One card per programme: 7 in total, matching the "7 programmes" number up top. -->
         </ol>
       </div>
       <div class="g-prog__bar" aria-hidden="true"><span></span></div>
-      <!-- A little progress bar that shows how far along the cards you've scrolled. Decoration only. -->
     </div>
   </section>
 
-  <!-- PROCESS: a real sequence, so numbered -->
-  <!-- These steps really do happen in order (first join, then learn, and so on),
-       so I used a numbered list instead of plain bullets. -->
   <section class="g-process" aria-labelledby="process-title">
     <h2 id="process-title">From first session to teaching others</h2>
     <div class="g-steps">
       <span class="g-steps__line" aria-hidden="true"></span>
-      <!-- The line that connects the steps together. It's only for looks, so it's hidden from screen readers. -->
       <ol>
         <li class="g-step"><div class="g-step__body"><h3>Join a lab</h3><p>Sign up for a lab in Johannesburg or Durban. You do not need any experience.</p></div></li>
         <li class="g-step"><div class="g-step__body"><h3>Learn by building</h3><p>Work in a small group on a real project from the first week.</p></div></li>
@@ -236,47 +137,37 @@
 
   <section class="reveal" aria-labelledby="gallery-title">
     <h2 id="gallery-title">Gallery</h2>
-    <img class="gallery-animation" src="images/gallery-animation.gif" alt="Animated BASIC gallery showing the lab in motion" loading="lazy" decoding="async">
-    <!-- An animated GIF at the top of the gallery.
-         loading="lazy" means the browser waits until you scroll near it before downloading it.
-         That saves data and makes the first load faster, which matters a lot on phones. -->
+    <img class="gallery-animation" src="images/community-lab-animation.gif" alt="Animated BASIC gallery showing the lab in motion" loading="lazy" decoding="async">
+    <!-- Selecting a gallery image opens it in the keyboard-accessible lightbox below. -->
     <div class="gallery-grid">
-      <!-- The grid of photos. Clicking one opens the lightbox (the big viewer at the bottom of this file).
-           Every photo has its own alt text describing what's in it. -->
-      <img src="images/community-collaboration.jpg" alt="Seven young people with arms around each other looking at a mountain view with cable cars" loading="lazy" decoding="async">
-      <img src="images/code-editor.jpg" alt="Monitors and a laptop showing code in a dark workspace" loading="lazy" decoding="async">
-      <img src="images/community-tutor.jpg" alt="Desk with laptops showing code, a sketch notebook and a water bottle" loading="lazy" decoding="async">
-      <img src="images/computer.jpg" alt="Desk setup with a curved monitor, keyboard and bonsai screen wallpaper" loading="lazy" decoding="async">
-      <img src="images/solar-panel-roof-installation.jpg" alt="Workers in hard hats installing solar panels on a rooftop" loading="lazy" decoding="async">
-      <img src="images/machine.jpg" alt="Close-up of a metal lathe cutting a steel part" loading="lazy" decoding="async">
-      <img src="images/community-members-together.jpg" alt="People seated around a table in a skyscraper room overlooking a city at night" loading="lazy" decoding="async">
-      <img src="images/solar-energy.jpg" alt="Rows of solar panels in a green field under a blue sky with clouds" loading="lazy" decoding="async">
-      <img src="images/basic-logo.png" alt="BASIC logo" loading="lazy" decoding="async">
-      <img src="images/glass-office-city-view.jpg" alt="Glass-walled office at sunset overlooking a city skyline" loading="lazy" decoding="async">
-      <img src="images/green-city-solar-future.jpg" alt="Illustration of a green futuristic city with plants, towers and airships" loading="lazy" decoding="async">
+      <img src="images/community-team-outdoors.jpg" alt="Seven young people with arms around each other looking at a mountain view with cable cars" loading="lazy" decoding="async">
+      <img src="images/coding-workspace.jpg" alt="Monitors and a laptop showing code in a dark workspace" loading="lazy" decoding="async">
+      <img src="images/learning-workspace.jpg" alt="Desk with laptops showing code, a sketch notebook and a water bottle" loading="lazy" decoding="async">
+      <img src="images/computer-workspace.jpg" alt="Desk setup with a curved monitor, keyboard and bonsai screen wallpaper" loading="lazy" decoding="async">
+      <img src="images/solar-panel-installation.jpg" alt="Workers in hard hats installing solar panels on a rooftop" loading="lazy" decoding="async">
+      <img src="images/workshop-machinery.jpg" alt="Close-up of a metal lathe cutting a steel part" loading="lazy" decoding="async">
+      <img src="images/community-event.jpg" alt="People seated around a table in a skyscraper room overlooking a city at night" loading="lazy" decoding="async">
+      <img src="images/sustainable-city-illustration.jpg" alt="Rows of solar panels in a green field under a blue sky with clouds" loading="lazy" decoding="async">
+      <img src="images/community-gala.jpg" alt="Glass-walled office at sunset overlooking a city skyline" loading="lazy" decoding="async">
+      <img src="images/future-city-illustration.jpg" alt="Illustration of a green futuristic city with plants, towers and airships" loading="lazy" decoding="async">
     </div>
   </section>
 
   <section class="g-bleed g-cities" aria-labelledby="cities-title">
     <h2 id="cities-title" class="g-visually-hidden">Where BASIC runs</h2>
-    <!-- This heading is hidden on purpose. Sighted people see the big city names, but screen readers
-         still get a proper heading so the page structure makes sense. -->
     <p class="g-city g-city--a">Johannesburg</p>
     <p class="g-city g-city--b">Durban</p>
     <p class="g-cities__note">Two cities, one lab model. Each lab is run with local mentors, local partners and local young people.</p>
   </section>
 
   <section class="reveal quote" aria-label="Learner testimonial">
-    <!-- A testimonial is a quote from someone who did the programme. -->
     <blockquote>
       <p>&ldquo;I joined CODE with zero experience. In 12 weeks I built a clinic booking tool. Now I teach CONNECT on Saturdays.&rdquo;</p>
-      <!-- &ldquo; and &rdquo; are the curly opening and closing quote marks. -->
     </blockquote>
     <cite>Thandi M., CODE Cohort 3</cite>
   </section>
-
   <section class="g-cta" aria-labelledby="cta-title">
-    <!-- CTA = "call to action". It's the last nudge at the bottom of the page telling people what to do next. -->
+  <section class="g-cta" aria-labelledby="cta-title">
     <h2 id="cta-title">Ready to build something with us?</h2>
     <p>Tell us which programme interests you and we will get back to you about the next lab near you.</p>
     <a class="btn" href="enquiry.html">Get involved</a>
@@ -285,34 +176,24 @@
 
 </main>
 
-<!-- Lightbox: opens a larger version of a selected gallery image. -->
-<!-- The lightbox is the dark pop-up that shows a gallery photo big when you click it.
-     It stays hidden until clicked. "Hooks" just means the ids (lb, lb-x, lb-p, lb-n, lb-img, lb-cap)
-     that part3.js looks for. If I rename any of them, the lightbox breaks, so leave them alone. -->
+<!-- These IDs are used by js/site.js to open the selected image, update its caption, navigate and close the lightbox. -->
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="lb-title">
   <h2 id="lb-title" class="g-visually-hidden">Image viewer</h2>
   <button type="button" id="lb-x" aria-label="Close image viewer">Close</button>
   <button type="button" id="lb-p" aria-label="Previous image">&lsaquo;</button>
-  <!-- lb-p = previous photo (the left arrow) -->
   <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
-  <!-- The JavaScript fills in the picture and caption each time you click a different photo. -->
   <button type="button" id="lb-n" aria-label="Next image">&rsaquo;</button>
-  <!-- lb-n = next photo (the right arrow) -->
 </div>
 
-<!-- Modal (hooks unchanged for js/part3.js) -->
-<!-- A modal is a small pop-up box in the middle of the screen. It's used for the "Thank you" message
-     after someone submits a form. Same rule as above: part3.js needs these ids, so don't rename them. -->
+<!-- js/site.js writes form and newsletter feedback into this dialog; its IDs must match the script selectors. -->
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <div class="box">
     <h3 id="modal-title">Thank you</h3>
     <p id="modal-text"></p>
-    <!-- Empty on purpose. The JavaScript writes the right message in here. -->
     <button type="button" class="btn" id="modal-x">Close</button>
   </div>
 </div>
 
-<!-- Page footer: final contact and social information. -->
 <footer class="site-footer">
   <div class="container footer-grid">
     <div>
@@ -365,10 +246,9 @@
   <p style="text-align:center;padding:1rem">Some interactive features need JavaScript. All main content remains available.</p>
 </noscript>
 
-<!-- Scripts load at the end of the document so page content displays first. -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/part3.js"></script>
-<script src="js/gsap.js"></script>
+<script src="js/site.js"></script>
+<script src="js/animations.js"></script>
 </body>
 </html>

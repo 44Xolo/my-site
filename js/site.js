@@ -10,7 +10,7 @@ var DATA=[
 {id:"education",code:"EDUCATION",name:"EDUCATION: Tutor & Facilitator Track",cat:"Education",dur:12,level:"Advanced",intake:49,desc:"Train-the-trainer: pedagogy, facilitation and digital classroom tools."},
 {id:"connect",code:"CONNECT",name:"CONNECT: Digital Inclusion & Access",cat:"Access",dur:4,level:"Beginner",intake:"Weekly",desc:"Device refurbishing, connectivity clinics and basic digital skills."}];
 var SLOTS={code:["Mon/Wed 09:00-12:00","Tue/Thu 14:00-17:00"],ai:["Mon 14:00-16:00","Fri 09:00-11:00"],green:["Wed 09:00-15:00"],build:["Tue/Thu 09:00-13:00"],entrepreneur:["Thu 10:00-13:00"],education:["Mon-Fri 08:00-12:00"],connect:["Sat 09:00-12:00"]};
-var PROGRAM_IMAGES={code:"code-editor.jpg",ai:"computer.jpg",green:"solar-energy.jpg",build:"machine.jpg",entrepreneur:"community-collaboration.jpg",education:"community-tutor.jpg",connect:"community-members-together.jpg"};
+var PROGRAM_IMAGES={code:"coding-workspace.jpg",ai:"computer-workspace.jpg",green:"solar-panel-installation.jpg",build:"workshop-machinery.jpg",entrepreneur:"community-workshop.jpg",education:"learning-workspace.jpg",connect:"community-event.jpg"};
 var fmtIntake=function(v){if(typeof v!=="number")return v;return new Date(Date.now()+v*864e5).toLocaleDateString("en-ZA",{day:"2-digit",month:"short",year:"numeric"})};
 var esc=function(s){return s.replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})};
 /* nav */

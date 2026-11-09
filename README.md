@@ -15,7 +15,7 @@
 
 ## Project overview
 
-A responsive, five-page website for **BASIC Community Future Labs** (Building Access, Skills, Innovation & Community), a student-led organisation building Community Future Labs in underserved areas, with lab locations in Johannesburg and Durban. The site promotes the **LEARN → BUILD → EARN → GIVE BACK** model, presents seven programmes, and lets visitors volunteer, sponsor, partner or make contact.
+A responsive, six-page website for **BASIC Community Future Labs** (Building Access, Skills, Innovation & Community), a student-led organisation building Community Future Labs in underserved areas, with lab locations in Johannesburg and Durban. The site promotes the **LEARN → BUILD → EARN → GIVE BACK** model, presents seven programmes, and lets visitors volunteer, sponsor, partner or make contact.
 
 Built with HTML5, CSS3 (Grid and Flexbox), vanilla JavaScript, Leaflet/OpenStreetMap and GSAP. It is a static site: no backend, database, package install or build step.
 
@@ -32,12 +32,13 @@ Built with HTML5, CSS3 (Grid and Flexbox), vanilla JavaScript, Leaflet/OpenStree
 | `index.html` | Home: splash screen, hero, impact counters, programme overview, gallery with lightbox, GSAP animations |
 | `about.html` | History, mission, vision, values, team, FAQ accordion |
 | `programmes.html` | Search, filter and sort catalogue of the seven programmes |
+| `news.html` | News cards, category filters, story dialogs and newsletter form |
 | `enquiry.html` | Tabbed Volunteer / Sponsor / Partnership form with generated responses and sponsorship estimate |
 | `contact.html` | Validated contact form (mailto), Leaflet maps for both labs, Google Maps directions |
 
 ## Site map
 
-![BASIC site map showing index.html at the top, linking to about.html, programmes.html, enquiry.html and contact.html, with a shared footer](images/sitemap.png)
+![BASIC site map showing index.html at the top, linking to about.html, programmes.html, news.html, enquiry.html and contact.html, with a shared footer](images/sitemap.png)
 
 Solid lines show the primary navigation path from the homepage. Dashed lines show in-page sections and shared components. Every page shares the same sticky header and footer.
 
@@ -45,34 +46,35 @@ Solid lines show the primary navigation path from the homepage. Dashed lines sho
 index.html (Homepage)
 ├── about.html        → team cards (4 governance roles), core values grid
 ├── programmes.html   → anchors #code #ai #green #build #entrepreneur #education #connect
+├── news.html         → news stories, category filters and newsletter
 ├── enquiry.html      → tabbed forms: Volunteer | Sponsor | Partnership
 └── contact.html      → Johannesburg Lab (map), Durban Lab (map)
-Shared header and footer on all five pages
+Shared header and footer on all six pages
 ```
 
 ## Part 3 requirements and where they are implemented
 
 | Requirement | Implementation | File(s) |
 |---|---|---|
-| Dynamic content from data | Seven programmes stored in a JavaScript array and rendered as cards | `js/part3.js` |
-| Search, filter, sort | Live text search with `<mark>` highlighting, category filter, A–Z / Z–A / duration sort, result counter, "no match" message | `js/part3.js`, `programmes.html` |
-| Form validation | Rule-driven (`data-rules`): required, min/max length, email, South African phone, future date; checked on blur and on submit; inline errors per field | `js/part3.js`, `enquiry.html`, `contact.html` |
-| Calculations / generated output | Volunteer: next intake and available slots. Sponsor: estimate = base × months/12 × tier. Partnership: acknowledgement | `js/part3.js` |
-| Contact workflow | Builds an encoded `mailto:` link with name, email, phone, type and message, and shows a preview | `js/part3.js`, `contact.html` |
-| Interactive components | Accordion, enquiry tabs, modal feedback, mobile navigation toggle (`aria-expanded`) | `js/part3.js`, `css/part3.css` |
-| Gallery lightbox | Click or Enter/Space to open; close button, backdrop click, Esc, arrow keys, focus trap and focus restoration | `js/part3.js`, `css/part3.css` |
+| Dynamic content from data | Seven programmes stored in a JavaScript array and rendered as cards | `js/site.js` |
+| Search, filter, sort | Live text search with `<mark>` highlighting, category filter, A–Z / Z–A / duration sort, result counter, "no match" message | `js/site.js`, `programmes.html` |
+| Form validation | Rule-driven (`data-rules`): required, min/max length, email, South African phone, future date; checked on blur and on submit; inline errors per field | `js/site.js`, `enquiry.html`, `contact.html` |
+| Calculations / generated output | Volunteer: next intake and available slots. Sponsor: estimate = base × months/12 × tier. Partnership: acknowledgement | `js/site.js` |
+| Contact workflow | Builds an encoded `mailto:` link with name, email, phone, type and message, and shows a preview | `js/site.js`, `contact.html` |
+| Interactive components | Accordion, enquiry tabs, modal feedback, mobile navigation toggle (`aria-expanded`) | `js/site.js`, `css/interactions.css` |
+| Gallery lightbox | Click or Enter/Space to open; close button, backdrop click, Esc, arrow keys, focus trap and focus restoration | `js/site.js`, `css/interactions.css` |
 | Maps | Leaflet 1.9.4 with OpenStreetMap tiles, markers and popups for the Johannesburg and Durban labs, plus directions links; graceful fallback if Leaflet fails | `js/maps.js`, `contact.html` |
-| Animation | GSAP 3.12.5 and ScrollTrigger: scroll progress, hero zoom, programme scroller, reveal effects; scroll reveal, animated counters and word-by-word hero text in vanilla JS | `js/gsap.js`, `css/gsap-animations.css`, `js/part3.js` |
-| Splash screen | Plays once per session (`sessionStorage`), skipped for repeat visits and reduced-motion users | `js/part3.js`, `css/style.css` |
+| Animation | GSAP 3.12.5 and ScrollTrigger: scroll progress, hero zoom, programme scroller, reveal effects; scroll reveal, animated counters and word-by-word hero text in vanilla JS | `js/animations.js`, `css/animations.css`, `js/site.js` |
+| Splash screen | Plays once per session (`sessionStorage`), skipped for repeat visits and reduced-motion users | `js/site.js`, `css/style.css` |
 | Accessibility | Skip link, semantic headings, labelled controls, `aria-invalid` and live result announcements, visible `:focus-visible` outlines, `prefers-reduced-motion` support | all pages, `css/*.css` |
 | SEO | Unique titles and descriptions, canonical links, Open Graph and Twitter tags, keywords, `robots.txt`, `sitemap.xml`, favicon | all pages, `robots.txt`, `sitemap.xml` |
-| Responsive design | Breakpoints at 900px, 768px, 600px and 520px (plus the Part 2 layout); gallery becomes a swipeable scroller on mobile | `css/style.css`, `css/part3.css` |
+| Responsive design | Breakpoints at 900px, 768px, 600px and 520px (plus the Part 2 layout); gallery becomes a swipeable scroller on mobile | `css/style.css`, `css/interactions.css` |
 | Deployment | GitHub Pages from `main` | repository settings |
 
 ## Forms
 
 - **Enquiry form** — text, email, telephone, programme, date, number, select and textarea controls. The selected tab decides which fields apply. The `?programme=` query string (from the "Volunteer" button on each programme card) pre-selects the programme.
-- **Contact form** — validates (including a required consent checkbox), then sends the message through Formspree when `FORM_ENDPOINT` is set at the top of `js/part3.js`, showing a confirmation message. If the endpoint is empty or the request fails, it falls back to a prepared `mailto:` message to `info@basicfuturelabs.org`.
+- **Contact form** — validates (including a required consent checkbox), then sends the message through Formspree when `FORM_ENDPOINT` is set at the top of `js/site.js`, showing a confirmation message. If the endpoint is empty or the request fails, it falls back to a prepared `mailto:` message to `info@basicfuturelabs.org`.
 - **Form controls** — text, email, telephone, date, number, select dropdowns, checkboxes (availability, consent, newsletter) and radio buttons (experience level), each with a label and inline validation.
 
 Forms are validated client-side only. Submissions are not stored or sent by a server.
@@ -91,7 +93,7 @@ The splash screen plays for about 2.5 seconds on the first visit of each session
 
 ## Testing checklist
 
-- [ ] All five pages load from the live GitHub Pages URL
+- [ ] All six pages load from the live GitHub Pages URL
 - [ ] Navigation and hamburger menu work on desktop and mobile
 - [ ] Programme search, category filter and sort work, and "no match" message appears
 - [ ] Enquiry tabs switch fields and generate the correct Volunteer / Sponsor / Partnership output
@@ -113,7 +115,7 @@ Marker feedback on the Part 2 submission (marks as awarded) and the action taken
 | Criterion | Mark | Marker feedback | Action taken in Part 3 |
 |---|---|---|---|
 | Feedback for Part 1 | 8/10 | Earlier feedback partly incomplete, including tables used for layout and limited documentation of changes | Removed table-based layout (CSS Grid/Flexbox only) and documented every change in dated README and `CHANGELOG.md` entries |
-| External stylesheet; default style; typography; layout; decoration and colour | 10/10; 5/5; 5/5; 5/5; 5/5 | Full marks | Structure and design system kept; extended in `css/part3.css` and `css/gsap-animations.css` |
+| External stylesheet; default style; typography; layout; decoration and colour | 10/10; 5/5; 5/5; 5/5; 5/5 | Full marks | Structure and design system kept; extended in `css/interactions.css` and `css/animations.css` |
 | Pseudo-classes used | 9/10 | Apply and test more consistently across all interactive elements | Hover, active, `:focus-visible` and disabled states added to navigation, buttons, cards, tabs, form controls, gallery images and lightbox controls |
 | Responsive: breakpoints, layout, typography, navigation menu, images | 10/10; 5/5 each | Full marks | Responsive rules retained; gallery becomes a swipeable scroller on mobile |
 | GitHub: multiple descriptive commits | 1/5 | Use specific messages that identify the files or features updated | Commit messages in Part 3 name the file or feature changed, and each is listed in the commit history table below |
@@ -127,7 +129,7 @@ Marker feedback on the Part 2 submission (marks as awarded) and the action taken
 This Part 3 repository continues the work submitted in the [Part 2 formative repository](https://github.com/EMKNDW/wede5020-g2-2026-formative-2-part-2-44xolo). Each point below records the marker feedback and the correction made in this repository:
 
 - **Layout:** HTML tables used for page layout were replaced with CSS Grid and Flexbox; no `<table>` element is used for website structure. The layout changes are implemented in `css/style.css` and documented here and in [`CHANGELOG.md`](CHANGELOG.md).
-- **Interactive pseudo-classes:** Hover, keyboard focus, active and focus-visible states now cover navigation, buttons, cards, tabs and form controls in `css/style.css` and `css/part3.css`. Disabled controls are styled separately.
+- **Interactive pseudo-classes:** Hover, keyboard focus, active and focus-visible states now cover navigation, buttons, cards, tabs and form controls in `css/style.css` and `css/interactions.css`. Disabled controls are styled separately.
 - **Commit messages:** Commit messages name the page, file or feature changed (for example, `Add readable comments to all HTML pages`) rather than vague messages such as `updated files`. See the commit history table below.
 - **Changelog and README:** Development work is recorded with dates at repository root in [`CHANGELOG.md`](CHANGELOG.md), with a linked summary in this README.
 - **References:** The Harvard-style reference list cites the youth unemployment source, development libraries, map providers, deployment documentation and AI assistance used. The image source table records where each image was taken from.
@@ -150,6 +152,7 @@ BASIC/
 ├── index.html
 ├── about.html
 ├── programmes.html
+├── news.html
 ├── enquiry.html
 ├── contact.html
 ├── README.md
@@ -158,26 +161,42 @@ BASIC/
 ├── sitemap.xml
 ├── css/
 │   ├── style.css
-│   ├── part3.css
-│   └── gsap-animations.css
+│   ├── interactions.css
+│   └── animations.css
 ├── js/
-│   ├── part3.js
+│   ├── site.js
 │   ├── maps.js
-│   └── gsap.js
+│   └── animations.js
 └── images/
-    └── sitemap.png
+    ├── coding-workspace.jpg
+    ├── community-event.jpg
+    ├── community-gala.jpg
+    ├── community-lab-animation.gif
+    ├── community-lab-hero.png
+    ├── community-team-outdoors.jpg
+    ├── community-workshop.jpg
+    ├── computer-workspace.jpg
+    ├── favicon.svg
+    ├── future-city-illustration.jpg
+    ├── glass-office-city-view.jpg
+    ├── learning-workspace.jpg
+    ├── sitemap.png
+    ├── solar-panel-installation.jpg
+    ├── sustainable-city-illustration.jpg
+    └── workshop-machinery.jpg
 ```
 
 ## Known limitations
 
 - Forms have no back-end; the contact form relies on the visitor's email client via `mailto:`.
 - Map tiles, GSAP and Leaflet load from CDNs, so those features need an internet connection (the maps show a fallback message if Leaflet is unavailable).
-- Legacy duplicate image filenames remain in `images/` for compatibility and are not referenced by any page.
+- HTML pages remain in the project root for GitHub Pages; styles, scripts and images are grouped in `css/`, `js/` and `images/`.
+- Asset filenames use lowercase kebab case and describe their content or role.
 
 ## Future improvements
 
 - Connect forms to a form service or back-end so enquiries are stored and emailed.
-- Add programme registration and a news and events section.
+- Expand the news and events coverage with more community stories.
 - Add automated accessibility and link checks to the deployment workflow.
 
 ## Images used
@@ -186,42 +205,44 @@ The website uses the following locally hosted files from the `images/` directory
 
 | Image file | Use in the website |
 |---|---|
-| `basic-community-lab.jpg` | Home page hero image and social preview |
-| `community-collaboration.jpg` | Home gallery and Entrepreneur programme card |
-| `code-editor.jpg` | Home gallery and CODE programme card |
-| `community-tutor.jpg` | Home gallery and EDUCATION programme card |
-| `computer.jpg` | Home gallery, AI programme card and Contact page image |
-| `solar-panel-roof-installation.jpg` | Home gallery |
-| `machine.jpg` | Home gallery and BUILD programme card |
-| `community-members-together.jpg` | Home gallery, CONNECT programme card and About page social preview |
-| `solar-energy.jpg` | Home gallery and GREEN programme card |
-| `basic-logo.png` | Home gallery and BASIC logo image |
-| `glass-office-city-view.jpg` | Home gallery, About page image and Enquiry page image |
-| `green-city-solar-future.jpg` | Home gallery |
-| `gallery-animation.gif` | Animated section on the Home page |
-| `favicon.svg` | Website favicon used across all pages |
+| `coding-workspace.jpg` | Home gallery, CODE programme card and CODE news story |
+| `community-event.jpg` | Home gallery and CONNECT programme card |
+| `community-gala.jpg` | Home gallery |
+| `community-lab-animation.gif` | Animated gallery section on the home page |
+| `community-lab-hero.png` | Home-page preload and social preview images |
+| `community-team-outdoors.jpg` | Home gallery and news-page heading |
+| `community-workshop.jpg` | Home gallery, Entrepreneur programme card and news story |
+| `computer-workspace.jpg` | Home gallery, AI programme card and Contact page |
+| `favicon.svg` | Browser icon used across all pages |
+| `future-city-illustration.jpg` | Home gallery |
+| `glass-office-city-view.jpg` | Home gallery, About page and Enquiry page |
+| `learning-workspace.jpg` | Home gallery and EDUCATION programme card |
+| `sitemap.png` | Site map in this README |
+| `solar-panel-installation.jpg` | Home gallery and GREEN programme card |
+| `sustainable-city-illustration.jpg` | Home gallery and news story |
+| `workshop-machinery.jpg` | Home gallery, BUILD programme card and news story |
 
-Image sources are recorded in the table below. Images that are not my own work are credited to their original source, and the licence or terms of use are stated. Images are used for this academic project only.
+The photo credits below follow the Harvard Anglia author-date format. Pinterest was provided as the source, and 2026 is used as the publication year supplied for the photos. The original creators and direct pin URLs were not provided, so the marked URL fields must be replaced with each image's individual Pinterest link before submission. Pinterest is the hosting platform, not necessarily the photographer.
 
-All locally hosted image files are stored in `images/`. The legacy duplicate filenames (`Basic..jpg`, `CODE.jpg`, `Tutor.jpg`, `solor.jpg`) are retained only for compatibility and are not referenced by the pages. The descriptive filenames are used in the HTML and JavaScript.
+All locally hosted image files are stored in `images/` and use descriptive filenames.
 
-### Image sources
+### Photo references (Harvard Anglia)
 
-| Image file | Source / creator | Where it was taken from | Date accessed |
-|---|---|---|---|
-| `basic-community-lab.jpg` (`Basic..jpg`) | Created by Hlompho Muzi Xolo in Canva (Canva, 2026) | Canva design with the BASIC text overlaid on a photograph: [ADD ORIGINAL PHOTO SOURCE URL] | [ADD DATE] |
-| `community-collaboration.jpg` | [ADD CREATOR / SITE] | [ADD URL] | [ADD DATE] |
-| `code-editor.jpg` (`CODE.jpg`) | [ADD CREATOR / SITE / AI TOOL] | [ADD URL] | [ADD DATE] |
-| `community-tutor.jpg` (`Tutor.jpg`) | [ADD CREATOR / SITE / AI TOOL] | [ADD URL] | [ADD DATE] |
-| `computer.jpg` | [ADD CREATOR / SITE / AI TOOL] | [ADD URL] | [ADD DATE] |
-| `machine.jpg` | [ADD CREATOR / SITE / AI TOOL] | [ADD URL] | [ADD DATE] |
-| `solar-panel-roof-installation.jpg` | [ADD CREATOR / SITE] | [ADD URL] | [ADD DATE] |
-| `solar-energy.jpg` | [ADD CREATOR / SITE] | [ADD URL] | [ADD DATE] |
-| `green-city-solar-future.jpg` (`solor.jpg`) | [ADD CREATOR / SITE / AI TOOL] | [ADD URL] | [ADD DATE] |
-| `community-members-together.jpg` | [ADD CREATOR / SITE / AI TOOL] | [ADD URL] | [ADD DATE] |
-| `glass-office-city-view.jpg` | [ADD CREATOR / SITE / AI TOOL] | [ADD URL] | [ADD DATE] |
-| `basic-logo.png`, `favicon.svg` | Created by Hlompho Muzi Xolo | BASIC logo and favicon | n/a |
-| `gallery-animation.gif` | [ADD CREATOR / TOOL] | [ADD URL OR "created by me in ___"] | [ADD DATE] |
+| Image file | Harvard Anglia reference |
+|---|---|
+| `community-lab-hero.png` | Xolo, H.M. (2026) *Community lab hero* [Digital composite, created in Canva using a Pinterest photograph]. Original photograph available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
+| `community-workshop.jpg` | *Community workshop* (2026) [Photograph]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
+| `coding-workspace.jpg` | *Coding workspace* (2026) [Photograph]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
+| `learning-workspace.jpg` | *Learning workspace* (2026) [Photograph]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
+| `computer-workspace.jpg` | *Computer workspace* (2026) [Photograph]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
+| `community-team-outdoors.jpg` | *Community team outdoors* (2026) [Photograph]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
+| `community-event.jpg` | *Community event* (2026) [Photograph]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
+| `community-gala.jpg` | *Community gala* (2026) [Photograph]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
+| `future-city-illustration.jpg` | *Future city illustration* (2026) [Illustration]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
+| `workshop-machinery.jpg` | *Workshop machinery* (2026) [Photograph]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
+| `solar-panel-installation.jpg` | *Solar panel installation* (2026) [Photograph]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
+| `sustainable-city-illustration.jpg` | *Sustainable city illustration* (2026) [Illustration]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
+| `glass-office-city-view.jpg` | *Glass office city view* (2026) [Photograph]. Pinterest. Available at: [direct Pinterest pin URL required] (Accessed: 9 November 2026). |
 
 ## AI use declaration
 
@@ -229,9 +250,9 @@ All locally hosted image files are stored in `images/`. The legacy duplicate fil
 |---|---|---|
 | Anthropic Claude (Sonnet 5.5) | Drafting this README, `CHANGELOG.md` and `robots.txt`/`sitemap.xml`; auditing the site against the Part 3 rubric; writing the enquiry/contact form additions (checkbox, radio and dropdown controls, validation rules, Formspree sending with fallback), rolling intake dates, meta keywords, image filenames and alt text | Supplied the repository, rubric and feedback; reviewed, tested, edited and committed the changes; responsible for understanding and explaining all submitted code |
 | Microsoft Copilot | Code explanations, debugging and implementation suggestions | Wrote, tested and integrated the final code |
-| Canva | Creating `basic-community-lab.jpg` | Designed the graphic |
+| Canva | Creating `community-lab-hero.png` | Designed the graphic |
 
-Some images may be AI-generated or taken from stock sites; each image source is recorded in the image sources table below. The chat prompts are available on request.
+The direct Pinterest links and original creators should be checked before submission so each image can be traced to its creator and usage terms. The chat prompts are available on request.
 
 ## References and source use
 

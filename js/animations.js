@@ -1,6 +1,6 @@
 /* gsap-animations.js
    Requires GSAP 3 + ScrollTrigger (loaded in index.html before this file).
-   Leaves part3.js alone: splash, .reveal, counters, lightbox and modal are untouched.
+   Leaves site.js alone: splash, .reveal, counters, lightbox and modal are untouched.
    If GSAP fails to load or the visitor prefers reduced motion, the page stays fully readable. */
 (function () {
   "use strict";
