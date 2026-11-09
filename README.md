@@ -9,7 +9,7 @@
 | **Module** | WEDE5020 — Web Development (Introduction) |
 | **Assessment** | Portfolio of Evidence, Part 3 |
 | **Live website** | https://44xolo.github.io/BASIC/ |
-| **Part 3 repository** | https://github.com/44Xolo/BASIC |
+| **Part 3 repository** | https://github.com/44Xolo/my-site |
 | **Part 2 repository** | https://github.com/EMKNDW/wede5020-g2-2026-formative-2-part-2-44xolo |
 | **Deployment** | GitHub Pages — `main` branch, repository root |
 
