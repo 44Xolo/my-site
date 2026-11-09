@@ -13,11 +13,33 @@
 | **Part 2 repository** | https://github.com/EMKNDW/wede5020-g2-2026-formative-2-part-2-44xolo |
 | **Deployment** | GitHub Pages — `main` branch, repository root |
 
+## Table of contents
+
+1. [Project overview](#project-overview)
+2. [Website pages](#website-pages)
+3. [Site map](#site-map)
+4. [Part 3 requirements and where they are implemented](#part-3-requirements-and-where-they-are-implemented)
+5. [Forms](#forms)
+6. [Running locally](#running-locally)
+7. [Testing checklist](#testing-checklist)
+8. [Part 2 result: 87%](#part-2-result-87)
+9. [Feedback from Formative Part 2](#feedback-from-formative-part-2)
+10. [Technologies](#technologies)
+11. [Project structure](#project-structure)
+12. [Commit history](#commit-history)
+13. [Changelog](#changelog)
+14. [Known limitations](#known-limitations)
+15. [Future improvements](#future-improvements)
+16. [Images used](#images-used)
+17. [AI use declaration](#ai-use-declaration)
+18. [References and source use](#references-and-source-use)
+19. [References](#references)
+
 ## Project overview
 
-A responsive, six-page website for **BASIC Community Future Labs** (Building Access, Skills, Innovation & Community), a student-led organisation building Community Future Labs in underserved areas, with lab locations in Johannesburg and Durban. The site promotes the **LEARN → BUILD → EARN → GIVE BACK** model, presents seven programmes, and lets visitors volunteer, sponsor, partner or make contact.
+A responsive, six-page website for **BASIC Community Future Labs (Building Access, Skills, Innovation & Community)**, a student-led organisation building Community Future Labs in underserved areas, with lab locations in Johannesburg and Durban. The site encourages the **LEARN → BUILD → EARN → GIVE BACK** model, lists seven programmes, and provides an opportunity for visitors to volunteer, sponsor or partner or get in touch. 
 
-Built with HTML5, CSS3 (Grid and Flexbox), vanilla JavaScript, Leaflet/OpenStreetMap and GSAP. It is a static site: no backend, database, package install or build step.
+Designed using HTML5, CSS3 (Grid and Flexbox), vanilla JavaScript, Leaflet/OpenStreetMap and GSAP. No backend, database, package install or build step: it's a static site.
 
 | Part | Focus | Result |
 |---|---|---|
@@ -73,9 +95,9 @@ Shared header and footer on all six pages
 
 ## Forms
 
-- **Enquiry form** — text, email, telephone, programme, date, number, select and textarea controls. The selected tab decides which fields apply. The `?programme=` query string (from the "Volunteer" button on each programme card) pre-selects the programme.
-- **Contact form** — validates (including a required consent checkbox), then sends the message through Formspree when `FORM_ENDPOINT` is set at the top of `js/site.js`, showing a confirmation message. If the endpoint is empty or the request fails, it falls back to a prepared `mailto:` message to `info@basicfuturelabs.org`.
-- **Form controls** — text, email, telephone, date, number, select dropdowns, checkboxes (availability, consent, newsletter) and radio buttons (experience level), each with a label and inline validation.
+- **Enquiry form** - text, email, telephone, programme, date, select and textarea controls. The tab you choose determines which fields are applicable. The ?programme= query string (from the "Volunteer" button on each programme card) pre-selects the programme.
+- **Contact form** — validates and then sends the message through Formspree when FORM_ENDPOINT is set at the top of js/site.js, displays a confirmation message. If the endpoint is empty or the request fails, it defaults to a ready-to-go mailto: to info@basicfuturelabs.org.
+- **Form controls** – text, email, telephone, date, number, select dropdowns, checkboxes (availability, consent, newsletter) and radio buttons (experience level) with label and inline validation.
 
 Forms are validated client-side only. Submissions are not stored or sent by a server.
 
@@ -85,11 +107,11 @@ Forms are validated client-side only. Submissions are not stored or sent by a se
 2. Open `index.html` in a browser, or right-click it in VS Code and choose **Open with Live Server** (recommended for testing maps and navigation).
 
 ```bash
-git clone https://github.com/44Xolo/BASIC.git
+git clone https://github.com/44Xolo/my-site.git
 cd BASIC
 ```
 
-The splash screen plays for about 2.5 seconds on the first visit of each session. An internet connection is needed for Leaflet, GSAP, Google Fonts and map tiles.
+The splash screen will play on the first visit of each session for approximately 2.5 seconds. For Leaflet, GSAP, Google Fonts and map tiles, an Internet connection is required. 
 
 ## Testing checklist
 
@@ -105,7 +127,7 @@ The splash screen plays for about 2.5 seconds on the first visit of each session
 - [ ] Layouts checked at desktop, 900px, 768px, 600px and 520px
 - [ ] Keyboard-only navigation has visible focus; modal and lightbox can be closed
 - [ ] Reduced-motion setting disables splash and animations
-
+ 
 *(Tick each item after testing and add Lighthouse / validator scores here.)*
 
 ## Part 2 result: 87%
@@ -186,18 +208,133 @@ BASIC/
     └── workshop-machinery.jpg
 ```
 
+## Commit history
+
+**Part 2 mark: 1/5**
+
+**Feedback:** Commit messages should identify the files, pages or features changed instead of using vague descriptions.
+
+**Action:** Part 3 history contains feature-specific messages. The examples below link to actual commits:
+
+| Date | Commit | Change recorded |
+|---|---|---|
+| 07 November 2026 | [`18bd19b`](https://github.com/44Xolo/my-site/commit/18bd19b) — `docs: document optimised asset workflow` | Documented how the site's media assets were optimized. |
+| 07 November 2026 | [`e12e616`](https://github.com/44Xolo/my-site/commit/e12e616) — `perf: reduce home page media payloads` | Reduced the Home page's image and animation payloads. |
+| 07 November 2026 | [`8aacca1`](https://github.com/44Xolo/my-site/commit/8aacca1) — `feat: add AJAX delivery for enquiry forms` | Added form submission behavior to `enquiry.html`, `contact.html` and the site JavaScript. |
+| 07 November 2026 | [`60c91b2`](https://github.com/44Xolo/my-site/commit/60c91b2) — `fix: restore news filters and newsletter` | Restored the News page's filtering and newsletter interactions. |
+| 07 November 2026 | [`7771112`](https://github.com/44Xolo/my-site/commit/7771112) — `fix: add news to all page navigation` | Added News to the shared site navigation. |
+| 07 November 2026 | [`1ccb234`](https://github.com/44Xolo/my-site/commit/1ccb234) — `feat: add expandable news stories` | Added expandable story content to the News page. |
+| 09 November 2026 | [`889faf6`](https://github.com/44Xolo/my-site/commit/889faf6) — `Organize site assets and document image references` | Renamed assets and updated their references and documentation. |
+
+Some older commits use a feature-focused message without naming a file, and the original `init` and `Update site` messages remain in the history. Existing commits have not been rewritten. New commits use the more specific `type(file): what changed` format where practical.
+
+## Changelog
+
+Part 3 Changelog: Response to Part 2 Feedback.
+
+**Part 2 mark: 87/100.** This changelog details the lecturer's feedback and how this is covered by the current BASIC Community Future Labs website. The cited dates and links for the examples are from the repository history; earlier project milestones are kept with their documented dates. There are 6 pages on the website: Home, About, Programmes, News, Enquiry and Contact.
+
+This changelog lists the changes made to the current site.This is the current site's changelog.
+
+**Part 2 mark: 1.5/5**
+
+The base level site was in need of a changelog with reasons and descriptions of changes.
+
+The root-level changelog is in this file. The name of the pages, files, and purpose of the work are given in the entries.
+
+#### 05 November 2026 — Part 2 feedback carried into Part 3
+
+Made changes to `css/style.css` to change the page layout from table to CSS Grid and Flexbox.
+- Enhanced the hover, focus, active and disabled states of navigation, buttons, and form controls.
+Incorporated descriptive page metadata, skip navigation and responsive layout documentation.
+- Documented the modifications in the README and changelog for later reference of the changes in response to previous feedback.
+
+#### 05–07 November 2026 — Part 3 features and refinements
+
+Added programme search, category filtering and sorting for the programme html and shared site java script in `programmes.html`.
+- Incorporated validated volunteer, sponsor and partnership, and contact form interactions into `enquiry.html` and `contact.html`.
+- Included interactive maps on contact.html, and a lightbox that is keyboard accessible on index.html.
+- (9) Improved the News page, added category filters, improve the newsletter form, and made expandable story content.
+- Implemented page specific metadata, social-sharing previews and added the robots.txt file, and sitemap.xml.
+The above linked commit history contains the relevant changes.
+
+Naming files and documenting projects.Project documentation and file naming.
+
+- Changed scripts, stylesheets and image names to descriptive, lowercase (kebab) case.
+Renamed HTML, CSS and JS references are updated.
+- Added a new README project structure and updated sitemap ordering; updated image credits and the explanatory comments in the home page.
+Inspected each of the six pages in the integrated browser, no broken images, console errors, no syntax and local asset references errors.
+
+### References and attribution
+
+**Part 2 mark: 2.5/5**
+
+Feedback: Refer to the youth-unemployment statistic, the images and external resources, and any AI assistance.
+
+In the README is the reference list and the AI-use declaration. The following is a summary of sources documented.
+
+#### Youth-unemployment statistic
+
+According to the Home page, Statistics South Africa is blamed for their 60.9% youth-unemployment rate.
+
+The statistics South Africa (2026) Labour market trends and youth unemployment statistics. The information has been retrieved from: https://www.statssa.gov.za/?p=18215 (Accessed: 5 November 2026).
+
+The figure is labelled on the page and linked to the source. It is important to verify the statistic reported with the cited release to be sure it is the same period and wording as the source release.
+
+#### Images
+
+The README contains a list of the local image names and provides Harvard Anglia style dated Pinterest references (2026). The source for the images is Pinterest.
+
+Not all URLs for individual pins are supplied, and the name of the original creator and licence information were not supplied. Images can be on Pinterest without having been created by Pinterest. Before submitting, replace each URL marked in the README with the direct pin, and record the original creator and reuse terms, if applicable.
+
+#### Other external resources
+
+Water your yard using a low-impact sprinkler system.Use a low-impact sprinkler system to water your lawn.
+|---|---|---|
+The Google Fonts Inter, Montserrat and Space Grotesk are part of the typography collection.Inter, Montserrat and Space Grotesk are Google Fonts in the typography collection.
+If you are interested in animation for your home page, there are some great solutions out there, including GSAP 3.12.5 and ScrollTrigger. GSAP 3.12.5 | ScrollTrigger | Home-page animation | https://gsap.com/docs/v3/ | https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ |
+Interactive maps are included in leaflet 1.9.4 in the map file on contact.html, which is located in the unpackage resource at unpkg.com/leaflet@1.9.4/ |
+OpenStreetMap contributors: Map tiles and map data are provided by OpenStreetMap contributors.If you use map tiles or map data, you are using www.openstreetmap.org, which is provided by OpenStreetMap contributors.
+Google Map or Directions links on `contact.html` | https://www.google.com/maps/ |
+
+Social icons are not imported from an external icon library, but rather are inline SVG.
+
+#### AI assistance
+
+Anthropic Claude is identified in the README as the AI tool used for structuring and the dates on which each of these is used. Individual conversation URLs were not provided, and this changelog does not create conversation URLs.
+
+The pseudo-classes and interaction states are the same.The pseudo-classes and interaction states are identical.
+
+**Part 2 mark: 9/10**
+
+Use and check interaction states in a consistent way with interactive elements.
+
+Action: The following states are used in shared style: hover, focus, focus-visible, active and disabled. These include navigation, links, buttons, form controls, cards, gallery images and lightbox controls. There is a visible outline of the keyboard focus and disabled controls are different in their appearance.
+
+A browser included for integration was used to test the loading time and key interactions such as Home page lightbox and Programme sorting. It was not recorded whether a separate test matrix for Firefox/Safaria/Mobile Device was performed - cross-browser coverage should be done and documented before submission.
+
+We will use the feedback from Part 1.Feedback from Part 1 will be used.
+
+**Part 2 mark: 8/10**
+
+Feedback: Tables used for layout, changes made based on feedback were not clearly documented.
+
+Action: No layout tables in HTML pages, CSS Grid and Flexbox used in shared stylesheets. Tables in the README are limited to actual tabular data, like marks, references/asset lists etc. Some sections of this changelog and the Part 2 feedback summary in the README will provide a clarification of what changed and why.
+
+Changes in future commits should be tagged with a message like docs(CHANGELOG.md): record response to Part 2 feedback.
+
 ## Known limitations
 
-- Forms have no back-end; the contact form relies on the visitor's email client via `mailto:`.
-- Map tiles, GSAP and Leaflet load from CDNs, so those features need an internet connection (the maps show a fallback message if Leaflet is unavailable).
-- HTML pages remain in the project root for GitHub Pages; styles, scripts and images are grouped in `css/`, `js/` and `images/`.
-- Asset filenames use lowercase kebab case and describe their content or role.
+There is no back-end to forms, the contact form uses the visitor's email client by using the `mailto:`.
+To use map tiles, GSAP and Leaflet, the Internet is required (this is because map tiles and Leaflet do not load when no Internet connection is available, with a message on the maps indicating otherwise).
+For GitHub Pages, HTML pages are stored in the project root, and the styles, scripts and images are stored in `css/`, `js/` and `images/`.
+- Assets filenames are lowercase kebab case and descriptive of what it is or what it does.
 
 ## Future improvements
 
-- Connect forms to a form service or back-end so enquiries are stored and emailed.
-- Expand the news and events coverage with more community stories.
-- Add automated accessibility and link checks to the deployment workflow.
+Link forms to a form service or back end for storing enquiries and sending them by email.
+- Continue to expand news and events coverage by expanding community stories.
+Ensure automated accessibility and link checks to the deployment workflow.
 
 ## Images used
 
@@ -222,9 +359,9 @@ The website uses the following locally hosted files from the `images/` directory
 | `sustainable-city-illustration.jpg` | Home gallery and news story |
 | `workshop-machinery.jpg` | Home gallery, BUILD programme card and news story |
 
-The photo credits below follow the Harvard Anglia author-date format. Pinterest was provided as the source, and 2026 is used as the publication year supplied for the photos. The original creators and direct pin URLs were not provided, so the marked URL fields must be replaced with each image's individual Pinterest link before submission. Pinterest is the hosting platform, not necessarily the photographer.
+To use the Harvard Anglia author-date system, see the photo credits below. Pinterest was provided as the source, and 2026 is used as the publication year supplied for the photos. It wasn't supplied by the original creators, and it wasn't included with the original pin URLs, so the URL fields they marked must be changed to each image's individual Pinterest URL before the submission. The host of the blog is not necessarily the photographer – it's Pinterest.
 
-All locally hosted image files are stored in `images/` and use descriptive filenames.
+All images that are hosted locally are in the `images/` directory, where they have descriptive names.
 
 ### Photo references (Harvard Anglia)
 
@@ -248,15 +385,14 @@ All locally hosted image files are stored in `images/` and use descriptive filen
 
 | Tool | Used for | Student contribution |
 |---|---|---|
-| Anthropic Claude (Sonnet 5.5) | Structuring this README, `CHANGELOG.md` and `robots.txt`/`sitemap.xml`; auditing the site against the Part 3 rubric; writing the enquiry/contact form additions (checkbox, radio and dropdown controls, validation rules, Formspree sending with fallback), rolling intake dates, meta keywords, image filenames and alt text | Supplied the repository, rubric and feedback; reviewed, tested, edited and committed the changes; responsible for understanding and explaining all submitted code
-
+| Anthropic Claude (Sonnet 5.5) | Structuring this README, `CHANGELOG.md` and `robots.txt`/`sitemap.xml`; auditing the site against the Part 3 rubric; writing the enquiry/contact form additions (checkbox, radio and dropdown controls, validation rules, Formspree sending with fallback), rolling intake dates, meta keywords, image filenames and alt text | Supplied the repository, rubric and feedback; reviewed, tested, edited and committed the changes; responsible for understanding and explaining all submitted code |
 | Canva | Creating `community-lab-hero.png` | Designed the graphic |
 
-The direct Pinterest links and original creators should be checked before submission so each image can be traced to its creator and usage terms. The chat prompts are available on request.
+If using images from Pinterest, the direct link to Pinterest and original creator should be checked prior to submission for each image so it can be traced to the original creator and usage terms. Chat prompts can be provided upon request.
 
 ## References and source use
 
-In-text citations are used where factual or technical support appears on the website. For example, Statistics South Africa supports the youth-unemployment statistic on the home page (Statistics South Africa, 2026), Leaflet and OpenStreetMap support the lab maps, and the MDN and W3C resources support the form and accessibility implementation (MDN Web Docs, n.d.; W3C, 2023). Only sources that informed the project are listed below.
+In-text citations are used throughout the site when factual and/or technical support is provided. For instance, the youth-unemployment statistic on the home page, the lab maps provided by Statistics South Africa, and the form and accessibility implementation provided by MDN and W3C resources. The sources that have been informed of the project are listed below.
 
 ## References
 
@@ -276,16 +412,13 @@ Leaflet (n.d.) *Leaflet: An open-source JavaScript library for mobile-friendly i
 
 Anglia Ruskin University (n.d.) *Harvard referencing*. Available at: https://library.aru.ac.uk/referencing/ (Accessed: 5 November 2026). This institutional guide was used to present AI-assistance and other sources in Harvard style.
 
-Anthropic (2026) *Claude Sonnet 5.5* [Large language model]. Available at: https://claude.ai/ (Accessed: 7 November 2026). Prompt: 'Create for me README file for Part 3'. Used to draft and structure this README from the repository contents and the Part 2 marker feedback; the content was reviewed and edited by the student (Anglia Ruskin University, n.d.).
-
-Microsoft (2026) *Microsoft Copilot*. Available at: https://copilot.microsoft.com/ (Accessed: 5 November 2026). Development and debugging assistance was used for code explanations and implementation suggestions (Anglia Ruskin University, n.d.).
+Anthropic (2026) *Claude Sonnet 5.5* [Large language model]. Available at: https://claude.ai/ (Accessed: 7 November 2026). Prompt: 'Create for me README file for Part 3'. Used Structure this README from the repository contents and the Part 2 marker feedback; the content was reviewed and edited by the student (Anglia Ruskin University, n.d.).
 
 OpenStreetMap contributors (n.d.) *Copyright and licence*. Available at: https://www.openstreetmap.org/copyright (Accessed: 5 November 2026).
 
 Statistics South Africa (2026) *Labour market trends and youth unemployment statistics*. Available at: https://www.statssa.gov.za/?p=18215 (Accessed: 5 November 2026).
 
 World Wide Web Consortium (W3C) (2023) *Web Content Accessibility Guidelines (WCAG) 2.2*. Available at: https://www.w3.org/TR/WCAG22/ (Accessed: 5 November 2026).
-
 
 BASIC (2026) BASIC Community Future Lab. Available at: https://www.basiccommunity.org/ (Accessed: 02 October 2026).
 
@@ -305,4 +438,4 @@ W3Schools (2026) JavaScript Tutorial. Available at: https://www.w3schools.com/js
 
 World Wide Web Consortium (W3C) (2026) HTML5 Specification. Available at: https://www.w3.org/TR/html5/ (Accessed: 02 October 2026).
 
-World Wide Web Consortium (W3C) (2026) CSS Snapshot. Available at: https://www.w3.org/TR/CSS/ (Accessed: 02 October 2026). 
+World Wide Web Consortium (W3C) (2026) CSS Snapshot. Available at: https://www.w3.org/TR/CSS/ (Accessed: 02 October 2026).
