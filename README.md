@@ -248,8 +248,8 @@ All locally hosted image files are stored in `images/` and use descriptive filen
 
 | Tool | Used for | Student contribution |
 |---|---|---|
-| Anthropic Claude (Sonnet 5.5) | Drafting this README, `CHANGELOG.md` and `robots.txt`/`sitemap.xml`; auditing the site against the Part 3 rubric; writing the enquiry/contact form additions (checkbox, radio and dropdown controls, validation rules, Formspree sending with fallback), rolling intake dates, meta keywords, image filenames and alt text | Supplied the repository, rubric and feedback; reviewed, tested, edited and committed the changes; responsible for understanding and explaining all submitted code |
-| Microsoft Copilot | Code explanations, debugging and implementation suggestions | Wrote, tested and integrated the final code |
+| Anthropic Claude (Sonnet 5.5) | Structuring this README, `CHANGELOG.md` and `robots.txt`/`sitemap.xml`; auditing the site against the Part 3 rubric; writing the enquiry/contact form additions (checkbox, radio and dropdown controls, validation rules, Formspree sending with fallback), rolling intake dates, meta keywords, image filenames and alt text | Supplied the repository, rubric and feedback; reviewed, tested, edited and committed the changes; responsible for understanding and explaining all submitted code
+
 | Canva | Creating `community-lab-hero.png` | Designed the graphic |
 
 The direct Pinterest links and original creators should be checked before submission so each image can be traced to its creator and usage terms. The chat prompts are available on request.
