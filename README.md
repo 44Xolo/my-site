@@ -385,7 +385,7 @@ All images that are hosted locally are in the `images/` directory, where they ha
 
 | Tool | Used for | Student contribution |
 |---|---|---|
-| Anthropic Claude (Sonnet 5.5) | Structuring this README, `CHANGELOG.md` and `robots.txt`/`sitemap.xml`; auditing the site against the Part 3 rubric; writing the enquiry/contact form additions (checkbox, radio and dropdown controls, validation rules, Formspree sending with fallback), rolling intake dates, meta keywords, image filenames and alt text | Supplied the repository, rubric and feedback; reviewed, tested, edited and committed the changes; responsible for understanding and explaining all submitted code |
+| Anthropic Claude (Sonnet 5.5) | Structuring this README, `CHANGELOG.md` and `robots.txt`/`sitemap.xml`; auditing the site against the Part 3 rubric; writing the enquiry/contact form additions (checkbox, radio and dropdown controls, validation rules, Formspree sending with fallback), rolling intake dates, meta keywords, image filenames and alt text
 | Canva | Creating `community-lab-hero.png` | Designed the graphic |
 
 If using images from Pinterest, the direct link to Pinterest and original creator should be checked prior to submission for each image so it can be traced to the original creator and usage terms. Chat prompts can be provided upon request.
